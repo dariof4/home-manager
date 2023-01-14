@@ -314,7 +314,7 @@ in {
           '';
 
         generateCompletions = package:
-          pkgs.runCommand "${package.name}-fish-completions" {
+          pkgs.runCommand "${lib.getName package}-${lib.getVersion package}-fish-completions" {
             src = package;
             nativeBuildInputs = [ pkgs.python3 ];
             buildInputs = [ cfg.package ];
